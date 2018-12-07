@@ -102,8 +102,8 @@ public class previewController {
                   fileName=newFile.getName();
                   log.info("转化后文件的名字="+fileName);
             }
-            //  request.getScheme()协议类型 request.getServerName() 服务器ip    request.getServerPort()服务器端口号
-            returnUrl = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + "/conventer/" + fileName;
+            //  request.getScheme()协议类型 request.getServerName() 服务器ip    request.getServerPort()服务器端口号 tomcat 启动需要添加项目名
+            returnUrl = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + "/file-conventer/conventer/" + fileName;
             jo.put("returnUrl", returnUrl);
             return jo.toJSONString();
         } catch (FileNotFoundException e) {
